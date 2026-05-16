@@ -2,6 +2,14 @@
 
 This repository allows for users to compare pokemon battle bots performance. Currently it supports the [foul-play](https://github.com/VishruthR/foul-play#) with MCTS using UCB, Regret Matching, and Exp3. 
 
+## Repository Structure
+
+`pokemon-showdown`: The server to execute Pokemon battles. It includes its own robust game engine for calculating the outcome of a turn. It is used as-is.
+
+`foul-play`: The battle bot frontend. It connects to the Pokemon Showdown server and calls `poke-engine` to calculate the best move in a given situation. Most code changes are in `fp/search/main.py`.
+
+`poke-engine`: An engine written with an MCTS using UCB implementation. I implement RM and Exp3 as well in `src/mcts_regret_matching.rs` and `src/mcts_exp3.rs` respectively.
+
 ### How to use
 
 First clone all submodules 
